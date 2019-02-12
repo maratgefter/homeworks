@@ -13,7 +13,7 @@
 		<ul>
 			<li>sum (выдаст сумму n1 и n2);</li>
 			<li>product (выдаст произведение n1 и n2);</li>
-			<li>pow (выдаст число n1 в степени n2).</li>
+			<li>power (выдаст число n1 в степени n2).</li>
 		</ul>
 		<p><label for="function">Поле для ввода функии: </label><input type="text" name = "function" id="function" placeholder="sum" pattern="^[a-zA-Z]+$" required="required"></p>
 		<p><label for="n_one">Поле для ввода переменной n<sub>1</sub>:</label> <input type="text" name="n_one" id = "n_one" placeholder="Введите число" pattern="^[ 0-9]+$" required="required"></p>

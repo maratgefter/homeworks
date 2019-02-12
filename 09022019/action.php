@@ -3,7 +3,7 @@
 	$n1 = $_POST["n_one"];
 	$n2 = $_POST["n_two"];
 
-	if (strcasecmp($action, 'sum') == 0){
+	/*if (strcasecmp($action, 'sum') == 0){
 		echo call_user_func('sum', $n1, $n2);
 	} elseif(strcasecmp($action, 'product') == 0){
 		echo call_user_func('product', $n1, $n2);
@@ -11,8 +11,13 @@
 		echo call_user_func('pow1', $n1, $n2);
 	} else {
 		echo "Извините, в данном калькуляторе нет такой функции...=(";
-	}
+	}*/
 	
+	if (!strcasecmp($action, 'sum') or !strcasecmp($action, 'product') or !strcasecmp($action, 'power')){
+		echo call_user_func($action, $n1, $n2);
+	} else {
+		echo "Извините, в данном калькуляторе нет такой функции...=(";
+	}
 
 	function sum($a, $b) {
         return $sum = $a + $b;
@@ -22,7 +27,7 @@
     	return $product = $a * $b;
     }
 
-   	function pow1($a, $b) {
+   	function power($a, $b) {
     	return pow($a, $b);
     }
 ?>
