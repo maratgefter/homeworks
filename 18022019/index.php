@@ -20,29 +20,40 @@
 </html>
 
 <?php
-$str = file_get_contents($_POST['feld']);
-$pat = '/<body>(.*)<\/body>/is';
-preg_match($pat, $str, $arr);
-$pat2 = '/<.*?>/is';
-$rep = "$1";
-$str2 = preg_replace($pat2, $rep, $arr[1]);
-//echo htmlentities($str2);
+    /*function take_body($str){
+            $pat = '/<body>(.*)<\/body>/is';
+            preg_match($pat, $str, $arr);
+            $pat2 = '/<.*?>/is';
+            $rep = "$1";
+            $str2 = preg_replace($pat2, $rep, $arr[0]);
+            //echo htmlentities($str2);
+            return $str2;
+    }*/
 
-echo "Число символов в тексте: ".iconv_strlen($str2)."<br>";
-echo "Число слов в тексте: ".preg_match_all('/\w{1,}\b/u', $str2, $matches)."<br>";
-echo "Число слов с ".$_POST['num']." символами: " .preg_match_all('/\b\w{'.$_POST["num"].'}\b/u', $str2, $matches)."<br>";
-echo "Перечень слов: <ol>";
-for ($i = 0; $i < count($matches[0]); $i++) {
-    echo '<li>'.$matches[0][$i].'</li>';
-}
-echo "</ol>";
-$arr2 = array_count_values($matches[0]);
-arsort($arr2);
-echo "Слова, которые встречаются более одного раза:<lo>";
-foreach ($arr2 as $k => $v) {
-    if ($v >= 2) {
-        echo '<li>'.$k.' - '.$v.' раза;</li>';
+    function del_js($arr){
+        $str2 = preg_replace('/<head>(.*)<\/head>/is', "", $arr);  //удалить HEAD
+        return $str2;
     }
-}
-echo "</ol>";
+
+$str2 = del_js(file_get_contents($_POST['feld']));
+echo htmlentities($str2);
+//$str2 = take_body($str2);
+
+// echo "Число символов в тексте: ".iconv_strlen($str2)."<br>";
+// echo "Число слов в тексте: ".preg_match_all('/\w{1,}\b/u', $str2, $matches)."<br>";
+// echo "Число слов с ".$_POST['num']." символами: " .preg_match_all('/\b\w{'.$_POST["num"].'}\b/u', $str2, $matches)."<br>";
+// echo "Перечень слов: <ol>";
+// for ($i = 0; $i < count($matches[0]); $i++) {
+//     echo '<li>'.$matches[0][$i].'</li>';
+// }
+// echo "</ol>";
+// $arr2 = array_count_values($matches[0]);
+// arsort($arr2);
+// echo "Слова, которые встречаются более одного раза:<ol>";
+// foreach ($arr2 as $k => $v) {
+//     if ($v >= 2) {
+//         echo '<li>'.$k.' - '.$v.' раза;</li>';
+//     }
+// }
+// echo "</ol>";
 ?>

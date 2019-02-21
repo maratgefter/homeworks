@@ -33,11 +33,13 @@ function bb_code($string) {
 
         function mark($string) {
             $pat = array('/~~(.*)~~/ui',
-                         '/\*(.*)\*/ui',
-                         '/\#(.*)\#/ui');
+                         '/\*{2}(.*)\*{2}/ui',
+                         '/\#(.*)/ui',
+                         '/\*{1}(.*)\*{1}/ui');
             $rep = array("<s>$1</s>",
-                         "<i>$1</i>",
-                         "<b>$1</b>");
+                         "<b>$1</b>",
+                         "<h1>$1</h1>",
+                         "<i>$1</i>");
             $str2 = preg_replace($pat, $rep, $string);
             return $str2;
             }
