@@ -1,5 +1,5 @@
 <?php
-function bb_code($string) {
+    function bb_code($string) {
         $pat = array('/\[b\](.*)\[\/b]/ui',
                      '/\[i\](.*)\[\/i]/ui',
                      '/\[u\](.*)\[\/u]/ui',
@@ -12,7 +12,7 @@ function bb_code($string) {
         return $str2;
         }
         
-        function smile($string){
+    function smile($string){
         $pat = array('/(:)\)/ui',
                      '/(:-)\)/ui',
                      '/(;-)\)/ui',
@@ -25,13 +25,13 @@ function bb_code($string) {
         return $str2;      
         }
 
-        function swear_words($string) {
+    function swear_words($string) {
             $pat = '/дурак|редиска/iu';
             $str2 = preg_match_all($pat, $string, $arr);
             return $arr[0];
         }
 
-        function mark($string) {
+    function mark($string) {
             $pat = array('/~~(.*)~~/ui',
                          '/\*{2}(.*)\*{2}/ui',
                          '/\#(.*)/ui',
@@ -42,15 +42,15 @@ function bb_code($string) {
                          "<i>$1</i>");
             $str2 = preg_replace($pat, $rep, $string);
             return $str2;
-            }
+        }
 
-function all_post($str){
-    $pat_nik = '/<nik>(.*?)<\/nik>/ius';
-    $arr_nik = preg_match_all($pat_nik, $str, $arr);
-    $pat_msg = '/<msg>(.*?)<\/msg>/ius';
-    $arr_msg = preg_match_all($pat_msg, $str, $arr2);
-    $message = array($arr[0], $arr2[0]);
-    return $message;
-}
+    function all_post($str){
+        $pat_nik = '/<nik>(.*?)<\/nik>/ius';
+        $arr_nik = preg_match_all($pat_nik, $str, $arr);
+        $pat_msg = '/<msg>(.*?)<\/msg>/ius';
+        $arr_msg = preg_match_all($pat_msg, $str, $arr2);
+        $message = array($arr[0], $arr2[0]);
+        return $message;
+        }
 
 ?>

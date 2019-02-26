@@ -32,12 +32,11 @@
             echo "</ol>";
         } else {
             $st = "<post>\n\t<nik>\n\t\t".$_POST['name']."\n\t</nik>\n\t<msg>\n\t\t".$_POST['message']."\n\t</msg>\n</post>"."\n\n";
-           // $st1 = smile(mark(bb_code(htmlspecialchars($st))));  на вывод
+           
             file_put_contents("x.xml", $st, FILE_APPEND);
             $str = file_get_contents('x.xml');
             
             $message = all_post($str);
-            // print_r ($message);
              
              echo "<table>";
                  foreach ($message[0] as $k => $v) {
@@ -45,7 +44,7 @@
                  }
              echo "</table>";
         }   
-        //echo swear_words($_POST['text']);
+
     ?>
 </body>
 </html>
