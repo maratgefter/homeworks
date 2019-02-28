@@ -1,9 +1,3 @@
-<?php
-    session_start();
-    $_SESSION['time1'] = time();
-        
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +7,7 @@
     <title>Session duration</title>
 </head>
 <body>
-    <form action="session.php" name="name" method="post">
+    <form action="send.php" name="name" method="post">
         <p>Введите Ваше имя: <input type="text" name="yourname" id=></p>
         <p>Введите ваше отчество: <input type="text" name="patronymic" id=></p>
         <p>Введите вашу фамилию: <input type="text" name="lastname" id=></p>
