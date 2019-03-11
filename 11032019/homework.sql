@@ -1,0 +1,62 @@
+SELECT *
+FROM `customers`
+WHERE `CITY`
+IN ('London', 'San Jose')
+
+SELECT *
+FROM `orders`
+WHERE `ODATE`
+IN ('1990-03-10')
+
+SELECT *
+FROM `salespeople`
+WHERE `SNAME`
+IN ('Axelrod', 'Peel')
+
+SELECT *
+FROM `customers`
+WHERE `CNUM`
+BETWEEN 2001
+AND 2004
+
+SELECT *
+FROM `orders`
+WHERE `AMT`
+BETWEEN 18
+AND 100
+
+SELECT *
+FROM `orders`
+WHERE `ODATE`
+BETWEEN
+CAST('1990-03-10' AS DATE)
+AND
+CAST('1990-05-10' AS DATE)
+
+SELECT *
+FROM `customers`
+ORDER BY `CNAME`
+
+SELECT *
+FROM `orders`
+ORDER BY `AMT`
+DESC
+
+SELECT *
+FROM `salespeople`
+ORDER BY 3
+
+SELECT *
+FROM `orders`
+WHERE `ODATE`
+LIKE '1990-03-__'
+
+SELECT *
+FROM `customers`
+WHERE `CITY`
+LIKE '_o%'
+
+SELECT *
+FROM `salespeople`
+WHERE `SNAME`
+LIKE '%n'
