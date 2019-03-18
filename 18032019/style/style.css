@@ -1,0 +1,75 @@
+html {
+    background-color: antiquewhite;
+}
+
+body {
+    margin-left: 15%;
+    margin-right: 15%;
+    background-color: peru;
+}
+
+h1 {
+    text-align: center;
+}
+
+p, li {
+    margin-left: 5%;
+}
+
+#bd_tab {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#bd_tab td {
+    border: 1px solid black;
+}
+
+#bd_tab tr:hover {
+    background-color: aquamarine;
+}
+
+tr:nth-child(2n) {
+    background-color: red;
+}
+
+tr:nth-child(2n+1) {
+    background-color: aliceblue;
+}
+
+#ban {
+    position: absolute;
+    width: 80%;
+    top: 30%;
+    bottom: 30%;
+    left: 10%;
+    right: 10%;
+    font-size: 4em;
+    color: red;
+    transform: rotate3d(1, 1, 1, 20deg);
+    border: 1px solid black;
+    background: aquamarine;
+
+}
+
+input {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
+    margin-bottom: 1%; 
+    border: 1px solid black;
+}
+
+#msg {
+    height: 45px;
+}
+
+.button {
+    margin-left: 45%;
+    margin-right: 45%;
+    width: 10%;
+    background-color: lightgreen;
+}
