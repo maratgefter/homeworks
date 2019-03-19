@@ -70,7 +70,7 @@
         while ($row = mysqli_fetch_array($res, MYSQLI_ASSOC)) {
             echo '<tr>';
             foreach ($row as $v) {
-                echo "<td>".mark(bb_code(smile($v)))."</td>";
+                echo "<td>".mark(bb_code(smile(htmlspecialchars($v))))."</td>";
             }
             echo '</tr>';
         }
