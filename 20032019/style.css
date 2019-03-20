@@ -12,10 +12,18 @@ td {
 
 #chess tr:nth-child(1) td {
     background: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    text-align: center;
 }
 
 #chess tr td:nth-child(1) {
     background: white;
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    text-align: center;
 }
 
 tr:nth-child(even) td:nth-child(even){
