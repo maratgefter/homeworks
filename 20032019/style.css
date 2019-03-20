@@ -1,0 +1,28 @@
+#chess {
+    border-collapse: collapse;
+    
+
+}
+
+td {
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+}
+
+#chess tr:nth-child(1) td {
+    background: white;
+}
+
+#chess tr td:nth-child(1) {
+    background: white;
+}
+
+tr:nth-child(even) td:nth-child(even){
+    background: black;
+}
+
+tr:nth-child(odd) td:nth-child(odd){
+    background: black;
+}
+
