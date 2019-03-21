@@ -1,36 +1,33 @@
 #chess {
     border-collapse: collapse;
-    
-
 }
 
-td {
+#chess td {
     border: 1px solid black;
     width: 25px;
     height: 25px;
 }
 
 #chess tr:nth-child(1) td {
-    background: white;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    text-align: center;
+    background: white !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    text-align: center !important;
 }
 
 #chess tr td:nth-child(1) {
-    background: white;
-    border-top: none;
-    border-left: none;
-    border-bottom: none;
-    text-align: center;
+    background: white !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-bottom: none !important;
+    text-align: center !important;
 }
 
-tr:nth-child(even) td:nth-child(even){
+#chess tr:nth-child(even) td:nth-child(even){
     background: black;
 }
 
-tr:nth-child(odd) td:nth-child(odd){
+#chess tr:nth-child(odd) td:nth-child(odd){
     background: black;
 }
-
