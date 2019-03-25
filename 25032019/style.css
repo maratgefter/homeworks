@@ -1,0 +1,32 @@
+#chess {
+    border-collapse: collapse;
+}
+
+#chess td {
+    width: 25px;
+    height: 25px;
+}
+
+#chess tr:nth-child(1) td, #chess tr:last-child td {
+    background: brown !important;
+    text-align: center !important;
+}
+
+#chess tr td:nth-child(1), #chess tr td:last-child {
+    background: brown !important;
+    text-align: center !important;
+}
+
+#chess tr:nth-child(even) td:nth-child(even){
+    background: black;
+}
+
+#chess tr:nth-child(odd) td:nth-child(odd){
+    background: black;
+}
+
+#chess tr:not(:first-child):not(:last-child) td:hover:not(:first-child):not(:last-child) {
+    border: 2px solid red;
+    transition: all 2s ease-in-out;
+    position: absolute;
+}
