@@ -3,25 +3,20 @@
 }
 
 #chess td {
-    width: 25px;
-    height: 25px;
+    width: 50px;
+    height: 50px;
 }
 
-#chess tr:nth-child(1) td, #chess tr:last-child td {
+#chess tr:nth-child(1) td,
+#chess tr:last-child td,
+#chess tr td:nth-child(1),
+#chess tr td:last-child {
     background: brown !important;
     text-align: center !important;
 }
 
-#chess tr td:nth-child(1), #chess tr td:last-child {
-    background: brown !important;
-    text-align: center !important;
-}
-
-#chess tr:nth-child(even) td:nth-child(even){
-    background: black;
-}
-
-#chess tr:nth-child(odd) td:nth-child(odd){
+#chess tr:nth-child(even) td:nth-child(even),
+#chess tr:nth-child(odd) td:nth-child(odd) {
     background: black;
 }
 
