@@ -1,0 +1,36 @@
+form {
+  border: 2px solid black;
+  background: yellow;
+  width: 642px;
+  height: 210px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-radius: 25px;
+}
+
+form input {
+  display: block;
+  margin: 20px;
+  border: 2px solid blueviolet;
+  background: aqua;
+  border-radius: 10px;
+  width: 600px;
+  height: 40px;
+  font: 24px 'Lobster', cursive;
+  color: aliceblue;
+  -webkit-transition: all 3s ease-in-out;
+  transition: all 3s ease-in-out;
+}
+
+form input[type="submit"] {
+  background: red;
+  width: 320px;
+}
+
+form input[type="text"]:focus, form input[type="password"]:focus {
+  background: green;
+}
+/*# sourceMappingURL=style.css.map */
