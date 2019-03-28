@@ -1,14 +1,15 @@
-form{
+form {
     border: 2px solid black;
     background: yellow;
     width: 642px;
     height: 210px;
     position: absolute;
     top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    border-radius: 25px; 
-    input{
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+
+    input {
         display: block;
         margin: 20px;
         border: 2px solid blueviolet;
@@ -19,12 +20,15 @@ form{
         font: 24px 'Lobster', cursive;
         color: aliceblue;
         transition: all 3s ease-in-out;
-        }
-        input[type="submit"]{
-            background: red;
-            width: 320px;
-        }
-        input[type="text"]:focus,input[type="password"]:focus {
-            background: green;           
+    }
+
+    input[type="submit"] {
+        background: red;
+        width: 320px;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+        background: green;
     }
 }
