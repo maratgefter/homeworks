@@ -1,0 +1,113 @@
+#user {
+    border: 2px solid black;
+    background: yellow;
+    width: 648px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+
+    input, textarea, select {
+        display: block;
+        margin: 20px;
+        border: 2px solid blueviolet;
+        background: aqua;
+        border-radius: 10px;
+        width: 600px;
+        height: 40px;
+        font: 24px 'Lobster', cursive;
+        color: aliceblue;
+        transition: all 3s ease-in-out;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    input[type="submit"] {
+        background: red;
+        width: 320px;
+    }
+
+    input:focus {
+        background: green;
+    }
+}
+
+.fail {
+    color: red;
+    text-align: center;
+    font: 24px 'Lobster', cursive;
+}
+
+.thanks {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    display: block;
+    border: 2px solid blueviolet;
+    background: aqua;
+    border-radius: 10px;
+    width: 600px;
+    height: 40px;
+    font: 24px 'Lobster', cursive;
+    color: aliceblue;
+}
+
+#opinion {
+    display: block;
+    margin: 20px auto;
+    border: 2px solid black;
+    background: yellow;
+    width: 648px;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    border-radius: 25px;
+    
+    div {
+        display: block;
+        margin: 20px;
+        border: 2px solid blueviolet;
+        background: aqua;
+        border-radius: 10px;
+        width: 600px;
+        height: 40px;
+        font: 24px 'Lobster', cursive;
+        color: black;
+        transition: all 3s ease-in-out;
+    }
+}
+
+.bad {
+    border: 2px solid red;
+    &::placeholder {
+        color: red;
+    }
+}
+
+.pages { 
+    text-align: center;
+    padding: 20px;
+
+    .selected{
+        background-color: blueviolet;
+    }
+        a{
+            text-decoration: none;
+            border: 1px solid royalblue;
+            background-color: aquamarine;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 0 5px 0 5px;
+            font: 24px 'Lobster', cursive;
+            color: black;
+            &:hover {
+                background-color: red;
+            }
+        } 
+}
+
