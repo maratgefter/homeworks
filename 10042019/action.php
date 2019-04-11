@@ -39,7 +39,7 @@
         exit();
     } 
 
-    $mysqli->query("INSERT INTO `table1` (`fio`, `age`, `mail`, `opinion`, `phone_number`, `mark`, `date`)
+    $mysqli->query("INSERT INTO table1 (`fio`, `age`, `mail`, `opinion`, `phone_number`, `mark`)
     VALUES ('".$_POST["name"]."', '".$_POST["age"]."', '".$_POST["post"]."','".$_POST["opinion"]."', '".$_POST["phone_number"]."', '".$_POST["mark"]."')");
 
     $mysqli->close();
