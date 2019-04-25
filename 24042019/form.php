@@ -12,42 +12,38 @@ class Form
         $this->method = $method;
     }
 
-    function add_input($type, $name='', $value='')
+    function attr_arr_to_str($attrNameArray)
     {
-        $addName = "";
-        if($name != '' ) {
-            $addName = " name='$name'";
-        } 
-
-        $addvalue = "";
-        if($value != '' ) {
-            $addvalue = " value='$value'";
-        } 
-
-        $this->inputTag .= "\t<input type='$type'$addName$addvalue>\n";
-    }
-
-    protected function coupleTag ($name, $attr='', $text='') 
-    {
-        if($attr != ''){
-            $addAttr = ' $attr';
+        $str = "";
+        foreach ($attrNameArray as $k => $v) {
+            $str .= " $k=\"$v\"";
         }
-        $this->inputTag .= "\t<$name$attr>$text</$name>\n";
+        return $str;
     }
 
-    function addTextarea($attr='', $text='')
+    function add_input($attrNameArray)
     {
-        return  $this->coupleTag('textarea', $attr, $text);
+        $this->inputTag .= "\t<input" .$this->attr_arr_to_str($attrNameArray).">\n";
     }
 
-    function addButton($attr='', $text='')
+    // protected function coupleTag ($attrNameArray, $text = null) 
+    // {
+    //     $this->inputTag .= "\t<textarea" .$this->attr_arr_to_str($attrNameArray).">$text</textarea>\n";
+    // }
+
+    function addTextarea($attrNameArray, $text = null)
     {
-        return  $this->coupleTag('button', $attr, $text);
+        return  $this->inputTag .= "\t<textarea" .$this->attr_arr_to_str($attrNameArray).">$text</textarea>\n";
+    }
+
+    function addButton($attrNameArray, $text = null)
+    {
+        return  $this->inputTag .= "\t<button" .$this->attr_arr_to_str($attrNameArray).">$text</button>\n";
     }
 
     function addBr()
     {
-        $this->inputTag .= "<br>";
+        $this->inputTag .= "\t<br>\n";
     }
 
     function show_form()
@@ -57,15 +53,15 @@ class Form
 }
 
 $obj = new Form('post', 'index.php');
-$obj->add_input('text', 'login', '');
+$obj->add_input(['type'=>'text']);
 $obj->addBr();
-$obj->add_input('password', 'password', '');
+$obj->add_input(['type'=>'password']);
 $obj->addBr();
-$obj->addTextarea(' rows="10" cols="10"', '123');
+$obj->addTextarea(['rows'=>'10', 'cols'=>'10'], '123');
 $obj->addBr();
-$obj->addButton(' value="ok"', 'Take');
+$obj->addButton(['value'=>'ok'], 'Take');
 $obj->addBr();
-$obj->add_input('submit', '', 'Send');
+$obj->add_input(['type'=>'submit', 'value'=>'Send']);
 
 echo $obj->show_form();
 ?>
