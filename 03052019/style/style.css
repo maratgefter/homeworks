@@ -1,0 +1,50 @@
+body {
+  width: 100%;
+  height: 100%;
+  background-color: goldenrod;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body .table_game {
+  border: 5px solid green;
+  width: 450px;
+  height: 450px;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+body .table_game td {
+  border: 2px solid #78c09c;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  color: yellow;
+  width: 150px;
+  height: 150px;
+}
+
+body #control {
+  float: left;
+}
+
+body #start_game, body #end_game, body #move {
+  margin: 10px;
+}
+
+body #start_game input, body #start_game select, body #end_game input, body #end_game select, body #move input, body #move select {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+  width: 300px;
+  background-color: lightgray;
+}
+
+body #start_game p, body #end_game p, body #move p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
+
+body #erro {
+  width: 100%;
+  color: red;
+}
+/*# sourceMappingURL=style.css.map */

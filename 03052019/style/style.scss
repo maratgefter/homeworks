@@ -1,0 +1,51 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-color: goldenrod;
+    font-family: 'Open Sans', sans-serif;
+
+
+    .table_game {
+        border:  5px solid green;
+        width: 450px;
+        height:  450px;
+        margin: 20px auto;
+        border-collapse: collapse;
+
+
+        td {
+            border:  2px solid rgb(120, 192, 156);
+            text-align: center;
+            font-size: 50px;
+            font-weight: bold;
+            color: yellow;
+            width: 150px;
+            height: 150px; 
+        }
+    }
+
+    #control {
+        float: left;
+    }
+
+    #start_game, #end_game, #move{
+        margin: 10px;
+        input, select{
+            font-family: 'Open Sans', sans-serif;
+            font-size: 25px;
+            width:300px;
+            background-color: lightgray;
+        }
+
+        p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 20px; 
+        }
+        
+    }
+
+    #erro {
+        width: 100%;
+        color: red;
+    }
+}
