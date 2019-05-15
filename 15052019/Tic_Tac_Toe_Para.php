@@ -126,12 +126,45 @@ class Tic_Tac_Toe {
         return "";
     }
 
-    // function horizontally(){
-    //     $cross_count = 0;
-    //     $circle_count = 0;
+    function horizontally(){
+        $cross_count = 0;
+        $circle_count = 0;
+        for($i=0; $i<count($this->array); $i++) {
+            if ($this->array[$i][$j=$i] == 'X'){
+                $cross_count++;
+            }
+            if ($this->array[$i][$j=$i] == 'O'){
+                $circle_count++;
+            }
+        }
+        
+        if ($cross_count == count($this->array)) {
+            return "X";
+        }
+        if ($circle_count == count($this->array)) {
+            return "O";
+        }
+    }
 
-    //     for
-    // }
+    function horizontally_second(){
+        $cross_count = 0;
+        $circle_count = 0;
+        for($i=count($this->array)-1; $i>=0; $i--) {
+            if ($this->array[$i][$j=count($this->array)-1-$i] == 'X'){
+                $cross_count++;
+            }
+            if ($this->array[$i][$j=count($this->array)-1-$i] == 'O'){
+                $circle_count++;
+            }
+        }
+        
+        if ($cross_count == count($this->array)) {
+            return "X";
+        }
+        if ($circle_count == count($this->array)) {
+            return "O";
+        }
+    }
 
 }
 
