@@ -2,7 +2,7 @@
 
 $siteClass = (isset($_GET["t"]) ? $_GET["t"] : 'site') . 'Controller';
 
-$method = 'action' . (isset($_GET["a"]) ? $_GET["a"] : 'About');
+$method = 'action' . (isset($_GET["a"]) ? $_GET["a"] : 'ShowTable');
 
 $view = 'siteView';
 
