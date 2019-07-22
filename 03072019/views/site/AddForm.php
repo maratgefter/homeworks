@@ -1,14 +1,8 @@
-<?php
-
-// print_r($fields);
-// print_r($targetURL);
-echo "<form method='post' action='index.php".$targetURL."'>";
-foreach ($fields as $value) {
-    echo "<label>$value<input type='text' placeholder='введите $value' name='$value'></value>";
-}
-echo "<input type='submit' value='Добавить запись'>";
-echo "</form>";
-
-// print_r($_POST);
-
-?>
+<form action="<?=$targetURL?>" method="post" class="form-group">
+    <?php
+    foreach ($fields as $value) {
+        echo "<label for='" . $value . "'>$value<input type='text' id='" . $value . "' name='" . $value . "' class='form-control'></label><br><br>\n";
+    }
+    ?>
+    <input type="submit" value="Отправить!!!" class='btn btn-primary'>
+</form>

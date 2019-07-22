@@ -1,7 +1,7 @@
 <?php
 
-class tableModel extends DB_entity {
-    
+class twoTableModel extends DB_entity {
+
     protected $table_name2;
 
     function __construct($link, $table_name, $table_name2 = null)

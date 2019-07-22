@@ -1,0 +1,14 @@
+.TicTacToe {
+    tr {
+        td {
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
