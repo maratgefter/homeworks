@@ -41,3 +41,10 @@ FROM
     salespeople
 WHERE
     customers.SNUM = salespeople.SNUM GROUP BY SNAME
+
+
+--сводная таблица для магазина
+
+SELECT categories.name, product.name, product.description, product.price, product.count, product.img, product.categories_id
+FROM categories, product
+WHERE categories.id = product.categories_id

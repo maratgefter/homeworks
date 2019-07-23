@@ -4,6 +4,18 @@ class siteView
 {
     public $viewName;
     public $viewData;
+    public $viewPath = 'views/site/';
+    public $layoutsPath = 'views/layouts/mainLayout.php';
+
+    function setViewPath($viewPath)
+    {
+        $this->viewPath = $viewPath;
+    }
+
+    function setLayoutsPath($layoutsPath)
+    {
+        $this->layoutsPath = $layoutsPath;
+    }
 
     function __construct()
     {  }
@@ -14,13 +26,13 @@ class siteView
         $this->viewData = $viewData;
 
         extract($this->viewData);
-        include 'views/layouts/mainLayout.php';
+        include $this->layoutsPath;
     }
 
     function body()
     {
         extract($this->viewData);
-        include 'views/site/' .$this->viewName . '.php';
+        include $this->viewPath.$this->viewName.'.php';
     }
 
 }

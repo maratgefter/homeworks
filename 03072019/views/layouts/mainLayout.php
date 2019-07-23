@@ -30,8 +30,8 @@
           Tables
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="?t=tableOne&a=showTable">Table1</a>
-          <a class="dropdown-item" href="?t=tableTwo&a=showTable">Table2</a>
+          <a class="dropdown-item" href="?t=category&a=showTable">Table1</a>
+          <a class="dropdown-item" href="?t=product&a=showTable">Table2</a>
         </div>
       </li>
     </ul>

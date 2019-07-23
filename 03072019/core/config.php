@@ -4,7 +4,7 @@
     $conf['host'] = 'localhost';
     $conf['user'] = 'root';
     $conf['password'] = '';
-    $conf['db'] = 'geftermv';
+    $conf['db'] = 'internet_shop';
     // $conf['page_size'] = '3';
 
 ?>
