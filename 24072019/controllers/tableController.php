@@ -7,7 +7,7 @@ abstract class tableController extends Controller {
     function __construct($view) {
         parent::__construct($view);
         global $conf;
-        $this->table = new tableModel(new mysqli($conf['host'], $conf['user'], $conf['password'], $conf['db']), $this->table_name);
+        $this->table = new tableModel(new mysqli(Conf::mysql_host, Conf::mysql_user, Conf::mysql_password, Conf::mysql_db), $this->table_name);
         $this->table->set_page_size(5);
     }
 
@@ -15,18 +15,13 @@ abstract class tableController extends Controller {
         $page = isset($_GET['page']) ? $_GET['page'] : 0;
         $this->render("show", [
             'title' => "show",
-            'table' => $this->table->set_page($page)->query(),
+            'table' => $this->table->set_page($page)->add_order_by_asc('id')->query(),
             'targetDelURL' => '?t='.$this->classNameNP().'&a=delrow',
             'targetEditURL' => '?t='.$this->classNameNP().'&a=showeditForm',
             'targetAddURL' => '?t='.$this->classNameNP().'&a=showAddForm',
             'currentURL' => '?t='.$this->classNameNP().'&a='.$this->currentActionNameNP(),
             'currentPage' => $page,
-            'pageCount' => $this->table->page_count(),
-            // <a href="?t=table&a=showaddForm" class="badge badge-info">addForm</a>
-            // 'PageCount' => $this->table->set_page_size(5),
-            // 'currentPage' => $page,
-            // 'currentURL' => "?t=".$this->classNameNP()."&a=".$this->currentActionNameNP()
-            // 'addWhereCondition' => $this->table->add_where_condition()
+            'pageCount' => $this->table->page_count()
         ]);
     }
     

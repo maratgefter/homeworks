@@ -4,6 +4,13 @@
     <input type="text" name="price" value="<? echo $row['price']; ?>" class="form-control">
     <input type="text" name="count" value="<? echo $row['count']; ?>" class="form-control">
     <input type="text" name="img" value="<? echo $row['img']; ?>" class="form-control">
-    <input type="text" name="categories_id" value="<? echo $row['categories_id']; ?>" class="form-control">
+    <!-- <input type="text" name="categories_id" value="<? //echo $row['categories_id']; ?>" class="form-control"> -->
+    <select name="categories_id">
+        <?php
+            foreach($categories as $value) {
+                echo "<option value='$value[id]'>$value[name]</option>";
+            }
+        ?>
+    </select>
     <input type="submit" value="Отправить!!!" class="btn btn-primary">
 </form>
