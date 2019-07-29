@@ -11,6 +11,13 @@ $pagination .= "<li class='page-item".((($currentPage+1) > $pageCount-1) ? ' dis
 echo $pagination;
 
 echo "<table class='table table-dark'>";
+
+echo "<tr>";
+foreach ($table[0] as $k=>$v) {
+    echo "<td>$k</td>";
+}
+echo "</tr>";
+
 foreach ($table as $v) {
     echo "<tr>";
     foreach ($v as $val) {
@@ -19,11 +26,12 @@ foreach ($table as $v) {
     echo "<td><a href='$targetDelURL&id=".$v['id']."'>Удалить</a></td>
         <td><a href='$targetEditURL&id=".$v['id']."'>Редактировать</a></td></tr>";
 }
+
 echo '</table>';
 echo $pagination;
 echo "<br><a href='$targetAddURL' class='btn btn-primary'>Добавить</a>";
 
-
+print_r($fields_comments_product);
 
 // print_r($table);
 // }

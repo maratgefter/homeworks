@@ -16,7 +16,17 @@ class productController extends tableController {
 
     function actionShowTable() {
         $this->table->productQueryPrepare();
-        parent::actionShowTable();
+        $this->render("show", [
+            'title' => "show",
+            'table' => $this->table->set_page($page)->add_order_by_asc('id')->query(),
+            'targetDelURL' => '?t='.$this->classNameNP().'&a=delrow',
+            'targetEditURL' => '?t='.$this->classNameNP().'&a=showeditForm',
+            'targetAddURL' => '?t='.$this->classNameNP().'&a=showAddForm',
+            'currentURL' => '?t='.$this->classNameNP().'&a='.$this->currentActionNameNP(),
+            'currentPage' => $page,
+            'pageCount' => $this->table->page_count(),
+            'fields_comments_product' => $this->table->get_field_comments()
+        ]);
     }
 
     function actionShowAddForm() {
