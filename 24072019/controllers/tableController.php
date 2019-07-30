@@ -6,7 +6,6 @@ abstract class tableController extends Controller {
 
     function __construct($view) {
         parent::__construct($view);
-        global $conf;
         $this->table = new tableModel(new mysqli(Conf::mysql_host, Conf::mysql_user, Conf::mysql_password, Conf::mysql_db), $this->table_name);
         $this->table->set_page_size(5);
     }

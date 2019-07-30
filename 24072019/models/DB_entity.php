@@ -185,7 +185,7 @@ class DB_entity
     {
         // echo "INSERT INTO `$this->table_name`(" . implode(',', array_keys($add_arr)) . ") VALUES ('" . implode("', '", $add_arr) . "')";
         $this->execute_sql("INSERT INTO `$this->table_name`(" . implode(',', array_keys($add_arr)) . ") VALUES ('" . implode("', '", $add_arr) . "')");
-        return $this->link->affected_rows;
+        return $this->link->insert_id;
     }
 
     function row_count()

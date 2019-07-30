@@ -6,5 +6,6 @@
         const mysql_user = 'root';
         const mysql_password = '';
         const mysql_db = 'internet_shop';
+        const img_path = 'img/';
     }
 ?>
