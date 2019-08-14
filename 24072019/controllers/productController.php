@@ -49,12 +49,29 @@ class productController extends tableController {
     {
         $id = $this->table->add($_POST);
         if (!empty($_FILES['img']['name'])) {
-        $file_name = "$id-".$FILES['img']['name'];
-        move_uploaded_file($_FILES['img']['tmp_name'], Conf::img_path.$file_name);
-        $this->table->edit($id, ['img'=>$file_name]);
+            $file_name = "$id-".$FILES['img']['name'];
+            move_uploaded_file($_FILES['img']['tmp_name'], Conf::img_path.$file_name);
+            $this->table->edit($id, ['img'=>$file_name]);
         }
         $this->redirect('?t='.$this->classNameNP().'&a=ShowTable');
     }
+
+    function actionEditRow() {
+        if (Conf::img_path.$this->table->get_row_by_id($_GET['id'])['img'] != Conf::img_path) {
+            unlink (Conf::img_path.$this->table->get_row_by_id($_GET['id'])['img']);
+        }
+        $this->table->edit($_GET['id'], $_POST);
+        if (!empty($_FILES['img']['name'])) {
+            $file_name = $_GET['id']."-".$_FILES['img']['name'];
+            move_uploaded_file($_FILES['img']['tmp_name'], Conf::img_path.$file_name);
+            $this->table->edit($_GET['id'], ['img'=>$file_name]);
+        } else {
+            $this->table->edit($_GET['id'], ['img'=>NULL]);
+        }
+
+        $this->redirect('?t='.$this->classNameNP().'&a=ShowTable');
+    }
+    
 }
 
 ?>
